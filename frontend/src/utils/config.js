@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://nexstore-api.onrender.com';
+export const BASE_URL = 'https://nexstore-nez2.onrender.com';
