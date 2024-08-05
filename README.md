@@ -37,7 +37,7 @@ Visit my website at: https://nex-store-sigma.vercel.app/
 
 ### Flow of the Application
 
-<img src="readmeassets/ApplicationFlow.png" width="500px" >
+<img src="readmeassets/ApplicationFlow.png" width="700px" >
 
 ### Home Page
 
