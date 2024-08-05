@@ -1,0 +1,25 @@
+.cart_main{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+
+@media (min-width:881px) and (max-width:1180px){
+    .cart_main{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media (min-width:616px) and (max-width: 880px){
+    .cart_main{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 615px){
+    .cart_main{
+        grid-template-columns: repeat(1,1fr);
+        justify-items: center;
+    }
+}
