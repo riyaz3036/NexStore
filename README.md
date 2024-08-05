@@ -1,4 +1,4 @@
-<p align="center"><img src="readmeassets/logo.jpg" ></p>
+<p align="center"><img src="readmeassets/logo.jpg" width="300px"></p>
 
 
 Nexstore is a cutting-edge e-commerce website designed to provide a seamless shopping experience. Our platform offers a wide range of products divided into 8 categories, ensuring you can easily find what you need. With user-friendly features like filtering, sorting, favorites, and a robust cart system, Nexstore makes online shopping effortless and enjoyable.
@@ -20,7 +20,7 @@ Nexstore is a cutting-edge e-commerce website designed to provide a seamless sho
 
 ## A sneak peek into what we have here!
 
-Visit my website at: 
+Visit my website at: https://nex-store-sigma.vercel.app/
 
 
 ## Technology Stack
