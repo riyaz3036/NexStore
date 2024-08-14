@@ -1,0 +1,11 @@
+.service_card {
+    transition: transform 0.3s ease; 
+}
+
+.service_card:hover{
+    transform: scale(1.03);
+}
+
+.service_card:hover .service_partition{
+    background-color: #6689ff;
+}

@@ -2,6 +2,7 @@ import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer'
 import CategoryPreview from '../Components/Home/CategoryPreview'
 import FeatureCards from "../Components/Home/FeatureCards";
+import Services from "../Components/Home/Services"
 import { BASE_URL } from "@/utils/config";
 
 
@@ -45,6 +46,8 @@ export default async function Home() {
             category={category}
           />
         ))}
+
+        <Services />
 
         <Footer />
     </main>

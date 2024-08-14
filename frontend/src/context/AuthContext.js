@@ -13,7 +13,7 @@ const AuthReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN_START":
       return {
-        user: null,
+        ...state,
         loading: true,
         error: null,
       };
@@ -31,7 +31,7 @@ const AuthReducer = (state, action) => {
       };
     case "REGISTER_SUCCESS":
       return {
-        user: null,
+        ...state,
         loading: false,
         error: null,
       };
@@ -59,7 +59,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && state.user) {
       localStorage.setItem("user", JSON.stringify(state.user));
     }
   }, [state.user]);

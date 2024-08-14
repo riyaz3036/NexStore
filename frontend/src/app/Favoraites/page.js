@@ -1,7 +1,6 @@
 "use client";
 import './favoraites.css';
 import { useContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import Image from "next/image";
 import favoraitesImage from '../../assets/favoraites.jpg'; 
 import Header from "@/Components/Header/Header";
@@ -54,15 +53,19 @@ export default function Favoraites() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                setFavoraites(data);
+                setFavoraites(data.variants);
             } catch (error) {
-                setFavoraitesError('Error loading data');
+                setFavoraitesError(error);
+                setFavoraitesLoading(false);
             } finally {
                 setFavoraitesLoading(false);
             }
         };
-        fetchFavoraites();
-    }, [user._id]);
+        if(user){
+            fetchFavoraites();
+        }
+        
+    }, [user]);
 
     return (
         <div>
@@ -78,10 +81,10 @@ export default function Favoraites() {
                 <div><p className="text-[#2d394b] text-2xl font-bold mt-5">FAVORITES</p></div>
 
                 <div className="favoraites_main py-5">
-                    {favoraitesError && <p className="p-5 text-xl text-center text-gray-500">{favoraitesError}</p>}
+                    {/* {favoraitesError && <p className="p-5 text-xl text-center text-gray-500">{favoraitesError}</p>} */}
                     {favoraitesLoading && <p className="p-5 text-xl text-center text-gray-500">Loading...</p>}
-                    {!favoraitesError && !favoraitesLoading && favoraites.variants.length===0 && <p className="p-5 text-xl text-center text-gray-500">No Favoraite products yet</p>}
-                    {!favoraitesError && !favoraitesLoading && favoraites.variants.map((variant) => (
+                    {!favoraitesError && !favoraitesLoading && favoraites.length===0 && <p className="p-5 text-xl text-center text-gray-500">No Favoraite products yet</p>}
+                    {!favoraitesError && !favoraitesLoading && favoraites.map((variant) => (
                         <div key={variant._id} className="flex flex-col w-[260px]">
                             <ProductCard product={variant} />
                             <button 

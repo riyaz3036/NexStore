@@ -12,12 +12,12 @@ export default function ProductCard({product}){
     };
 
     return(
-        <Link href={`/Product/${product._id}`} className="relative flex flex-col items-center w-[260px] bg-[#e6e6e6] shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out">
-            <div className="relative w-[240px] h-[240px] my-3">
+        <Link href={`/Product/${product._id}`} className="relative flex flex-col items-center w-[260px] bg-[#f5f3f3] shadow cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="relative w-[250px] h-[250px] py-[5px]">
                 <Image src={`${BASE_URL}/${product?.images[0]?.replace(/\\/g, '/')}`} alt="Home Offers" width={260} height={250} className="w-full h-full object-cover"/>
             </div>
 
-            <div className="p-2 bg-[#e6e6e6] w-full">
+            <div className="p-2 bg-[#f5f3f3] w-full">
                 <p className="text-sm text-center text-gray-400">{product.product_id.category_id?.name}</p>
                 <p className="text-lg font-semibold overflow-hidden text-ellipsis whitespace-nowrap text-center">{product.product_id.name}-{product.name}</p>
                 <p className="text-lg text-center italic">₹{product.offer_price}</p>
@@ -36,7 +36,7 @@ export default function ProductCard({product}){
             {/* Best seller */}
             {
                 product.product_id.best_seller?
-                <div className="absolute top-1 left-0 bg-[#6689ff] text-white text-xs p-2 italic" style={{borderRadius: '0 10px 10px 0'}}>
+                <div className="absolute top-1 left-0 bg-[#6689ff] text-white text-xs py-1 px-2 font-semibold">
                     <p>BEST SELLER</p>
                 </div>
                 :

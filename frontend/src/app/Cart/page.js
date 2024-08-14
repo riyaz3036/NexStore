@@ -8,6 +8,7 @@ import Footer from "@/Components/Footer/Footer";
 import Button from "@/Components/Button/Button";
 import { AuthContext } from '@/context/AuthContext';
 import { BASE_URL } from '@/utils/config';
+import CartCard from '../../Components/Cart/CartCard'
 
 export default function Cart(){
     const { user } = useContext(AuthContext);
@@ -16,34 +17,6 @@ export default function Cart(){
     const [products, setProducts] = useState([]);
     const [productError, setProductError] = useState('');
     const [productLoading, setProductLoading] = useState(true);
-
-    // Handle remove from cart
-    const handleRemoveFromCart = async (variant_id) => {
-        try {
-            if (!user) {
-                alert('Please Login to access the cart');
-                return;
-            }
-
-            const res = await fetch(`${BASE_URL}/cart/${user._id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ variant_id }),
-            });
-
-            const result = await res.json();
-
-            if (!res.ok) {
-                alert(result.message);
-                return;
-            }
-            window.location.reload();
-        } catch (e) {
-            alert('Error removing from cart');
-        }
-    };
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -64,6 +37,7 @@ export default function Cart(){
             fetchProducts();
         }
     }, [user]);
+
 
     //function to calculate total
     const calcTotal = () =>{
@@ -98,19 +72,7 @@ export default function Cart(){
                         {productLoading && <p className="p-5 text-xl text-center text-gray-500">Loading...</p>}
                         {!productError && !productLoading && products.length === 0 && <p className="p-5 text-xl text-center text-gray-500">No Products in the cart</p>}
                         {!productError && !productLoading && products.map((variant) => (
-                            <div key={variant.variant_id._id} className="flex gap-2">
-                                <div className="w-[100px] h-[100px] sm:w-[200px] sm:h-[200px] sm:w-[250px] sm:h-[250px]"><Image src={`${BASE_URL}/${variant.variant_id.images[0].replace(/\\/g, '/')}`}  width={200} height={200} className="w-full h-full object-cover" /></div>
-                                <div className="flex justify-between w-full gap-5">
-                                    <div className="text-gray-400 flex flex-col py-1">
-                                        <p className="text-sm sm:text-lg text-[#2d394b] font-semibold">{variant.variant_id.product_id.name}</p>
-                                        <p className="text-xs sm:text-sm">{variant.variant_id.name}</p>
-                                        <p className="text-xs sm:font-semibold">{variant.variant_id.product_id.category_id.name}</p>
-                                        <p className="text-xs sm:text-sm">Quantity: {variant.quantity}</p>
-                                        <div className="text-xs sm:text-sm underline cursor-pointer" onClick={() => handleRemoveFromCart(variant.variant_id._id)}><p>Remove</p></div>
-                                    </div>
-                                    <div className="text-[#2d394b] text-sm sm:text-lg font-semibold py-1"><p>₹{variant.variant_id.offer_price * variant.quantity}</p></div>
-                                </div>  
-                            </div>
+                            <div key={variant.variant_id._id}><CartCard variant={variant} user={user} /></div>
                         ))}
                     </div>
                 </div>

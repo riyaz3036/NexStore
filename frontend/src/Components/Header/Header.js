@@ -1,11 +1,12 @@
 "use client";
-import { useState, useContext } from 'react';
+import { useState, useContext} from 'react';
 import Image from "next/image";
 import logo from '../../assets/logo.jpg';
 import NavLink from './NavLink';
 import Link from 'next/link';
 import { AuthContext } from '@/context/AuthContext';
 import Logout from '../Logout/Logout'
+
 
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
       {/* Pre header */}
       <section className="flex items-center justify-end gap-5 h-[40px] bg-[#2d394b] text-[#a2b6d3] px-5">
         {user ? (
-          <Link href="/Cart" className="text-2xl font-semibold cursor-pointer">
+          <Link href="/Cart" className="flex text-2xl font-semibold cursor-pointer">
             <i className="ri-shopping-cart-line"></i>
           </Link>
         ) : null}
@@ -51,11 +52,11 @@ export default function Header() {
             <i className="ri-menu-line"></i>
           </div>
           {menu ? (
-            <div className="bg-white absolute top-full right-0 flex flex-col mt-1 mr-1 rounded shadow-lg">
-              <NavLink href="/">Home</NavLink>
-              <NavLink href="/Products/all">Shop</NavLink>
-              {user &&  <NavLink href="/Favoraites">Favorites</NavLink> }
-              <NavLink href="/Orders">Orders</NavLink>
+            <div className="bg-white absolute top-full right-0 left-0 flex flex-col mt-1 mx-1 rounded shadow-lg">
+              <Link href="/" className="p-2 border-b-2">Home</Link>
+              <Link href="/Products/all"  className="p-2 border-b-2">Shop</Link>
+              {user &&  <Link href="/Favoraites"  className="p-2 border-b-2">Favorites</Link> }
+              <Link href="/Orders"  className="p-2 border-b-2">Orders</Link>
             </div>
           ) : null}
         </div>
