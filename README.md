@@ -4,15 +4,18 @@
 Nexstore is a cutting-edge e-commerce website designed to provide a seamless shopping experience. Our platform offers a wide range of products divided into 8 categories, ensuring you can easily find what you need. With user-friendly features like filtering, sorting, favorites, and a robust cart system, Nexstore makes online shopping effortless and enjoyable.
 
 ### Key Features
-
 - Browse Products by Category: Explore products across 8 distinct categories. Filter products based on categories like Best Sellers or sort them according to price.
 - Detailed Product Views: Click on any product to view detailed information, including images, descriptions, and pricing.
 - Favorites: Add products to your favorites for quick access and easy reference later.
 - Cart Functionality: Add products to your cart, view cart contents, and proceed to checkout smoothly.
 - Order Management: Once an order is placed, you can view, track, or cancel your orders from your profile section.
 
-
 ### Highlights
+- Application built from 0 to 1 (No public API's have been used)
+- Self implemented UI brewing little inspiration from random sources, focusing on smoother user experience 
+
+
+### Technical Highlights
 - Readable and Maintainable Code: Our codebase follows best practices, making it easy to read, maintain, and extend.
 - Responsive Design: All pages are designed with responsiveness in mind, providing a consistent experience across desktops, tablets, and mobile devices.
 - Server and Client Components: Nexstore utilizes the power of Next.js with both server and client components to optimize rendering and improve performance. Server-side rendering (SSR) ensures that pages load quickly and are SEO-friendly, while client-side components enable dynamic interactions and real-time updates.
@@ -109,7 +112,7 @@ npm install
 - Now run this command to start the project.
 
 ```
-npm run dev
+npm start
 ```
 <br/>
 

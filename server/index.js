@@ -27,7 +27,7 @@ const corsOptions={
 //Database connection 
 const connect = async()=>{
     try{
-        await mongoose.connect("mongodb+srv://riyazmittu:F8Wex1urM4bNmHMF@cluster0.7cpwswr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",{
+        await mongoose.connect(process.env.MONGO_URI,{
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
