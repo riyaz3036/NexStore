@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { addVariantToFavorites, removeVariantFromFavorites, getFavoritesByUserId} = require('../controllers/FavoraitesController'); 
+const { verifyUser, verifyAdmin } = require('../verifyToken/verifyToken');
 
 // Add a product to favorites
 router.post('/:user_id', addVariantToFavorites);

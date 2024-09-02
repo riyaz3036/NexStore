@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const { createOrder, singleOrder, allOrders, updateOrder, deleteOrder} = require('../controllers/OrderController'); 
+const { verifyUser, verifyAdmin } = require('../verifyToken/verifyToken');
 
 // Create a new order
-router.post('/', createOrder);
+router.post('/',createOrder);
 
 // Get all orders of user
 router.get('/user/:user_id', allOrders);

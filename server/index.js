@@ -1,5 +1,6 @@
 const express= require('express');
 const dotenv= require('dotenv');
+const cookieParser = require('cookie-parser');
 const mongoose= require('mongoose');
 const cors= require('cors');
 const path = require('path');
@@ -44,6 +45,7 @@ const connect = async()=>{
 //Middleware
 app.use(express.json());
 app.use(cors(corsOptions));
+app.use(cookieParser());
 
 
 // Serve static files from the 'uploads' directory

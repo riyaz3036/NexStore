@@ -1,6 +1,8 @@
 const express = require('express');
 const { updateUser, deleteUser, getAllUsers, getUser} = require('../controllers/UserController');
 const upload = require('../config/multerConfig');
+const { verifyUser, verifyAdmin } = require('../verifyToken/verifyToken');
+
 
 const router = express.Router();
 

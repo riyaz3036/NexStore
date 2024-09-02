@@ -52,6 +52,9 @@ export default async function Product({ params }) {
     relatedError = e;
   }
 
+  console.log(id);
+  console.log(product);
+
 
   return (
     <div>

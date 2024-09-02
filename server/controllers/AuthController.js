@@ -18,7 +18,7 @@ const Register = async (req, res) => {
   
       // If admin, check secret key
       if (req.body.role === 'admin') {
-        if (req.body.ADMIN_KEY !== 'RIYAZ1010') {
+        if (req.body.ADMIN_KEY !== process.env.JWT_SECRET_KEY) {
           return res.status(403).json({ success: false, message: 'Invalid admin key' });
         }
       }
@@ -70,7 +70,7 @@ const Login = async (req, res) => {
       }
 
       const { password: _, ...rest } = user._doc;
-      const secretKey = process.env.JWT_SECRET_KEY || 'default_secret_key';
+      const secretKey = process.env.JWT_SECRET_KEY;
       // Create a JWT token
       const token = jwt.sign({ id: user._id.toString(), role: user.role }, secretKey, { expiresIn: '15d' });
 

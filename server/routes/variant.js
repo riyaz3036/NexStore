@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const upload = require('../config/multerConfig'); 
 const { createVariant, getSingleVariant, getAllVariants, updateVariant, deleteVariant,getSample} = require('../controllers/VariantController'); 
+const { verifyUser, verifyAdmin } = require('../verifyToken/verifyToken');
 
 // Create a new variant with image upload
 router.post('/', upload.array('images', 5), createVariant); // max limit: 5 images

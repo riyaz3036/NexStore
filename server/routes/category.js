@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {createCategory, singleCategory, allCategories, updateCategory, deleteCategory} = require('../controllers/CategoryController'); 
+const { verifyUser, verifyAdmin } = require('../verifyToken/verifyToken');
 
 // Create a new category
 router.post('/', createCategory);
