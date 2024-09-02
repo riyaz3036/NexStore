@@ -1,7 +1,7 @@
 // next.config.mjs
 export default {
     images: {
-      domains: ['localhost','nexstore-hcw6.onrender.com'],
+      domains: ['localhost','nexstore-mk03.onrender.com'],
     },
   };
   

@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://nexstore-hcw6.onrender.com';
+export const BASE_URL = 'https://nexstore-mk03.onrender.com';
