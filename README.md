@@ -23,7 +23,7 @@ Nexstore is a cutting-edge e-commerce website designed to provide a seamless sho
 
 ## A sneak peek into what we have here!
 
-Visit my website at: https://nex-store-sigma.vercel.app/
+Visit my website at: https://nex-store-u6lz.vercel.app/
 
 
 ## Technology Stack
