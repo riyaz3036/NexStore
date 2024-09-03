@@ -39,7 +39,7 @@ export default async function Home() {
         <FeatureCards />
 
         {error && <p className="p-5 text-xl text-center text-gray-500">{error}</p>}
-        {!error && sampleData.map(category => (
+        {!error && sampleData.length > 0 && sampleData.map(category => (
           <CategoryPreview
             key={category.category_id}
             left={sampleData.indexOf(category) % 2 === 0}
