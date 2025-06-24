@@ -1,14 +1,13 @@
 # Step 1: Build the project using Maven and JDK 21
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 
-# Set working directory
 WORKDIR /app
 
 # Copy pom.xml first for better layer caching
-COPY ./server/pom.xml ./pom.xml
+COPY server/pom.xml ./pom.xml
 
 # Copy source code
-COPY ./server/src ./src
+COPY server/src ./src
 
 # Build the project
 RUN mvn clean package -DskipTests
