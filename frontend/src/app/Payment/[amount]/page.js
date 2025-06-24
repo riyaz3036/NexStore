@@ -15,6 +15,7 @@ export default function Payment() {
     const { amount } = useParams();
     const [success, setSuccess] = useState(0);
 
+    
     // Object to store the Address (import from the state later)
     const [address, setAddress] = useState({
         street: '',
