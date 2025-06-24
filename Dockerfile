@@ -2,11 +2,11 @@
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 
 WORKDIR /app
-COPY server/pom.xml .
-COPY server/src ./src
+COPY ./server/pom.xml .
+COPY ./server/src ./src
 RUN mvn clean package -DskipTests
 
-# Step 2: Runtime image using JDK 21
+# Step 2: Runtime image
 FROM eclipse-temurin:21-jdk-jammy
 
 WORKDIR /app
