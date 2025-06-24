@@ -1,27 +1,16 @@
 # Step 1: Build the project using Maven and JDK 21
-FROM maven:3.9.5-openjdk-21 AS build
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 
-# Set working directory inside build container
 WORKDIR /app
-
-# Copy only backend code from the server/ folder
 COPY server/pom.xml .
 COPY server/src ./src
-
-# Build the application (skip tests)
 RUN mvn clean package -DskipTests
 
-# Step 2: Use a lightweight JDK 21 image to run the app
+# Step 2: Runtime image using JDK 21
 FROM eclipse-temurin:21-jdk-jammy
 
-# Set working directory inside runtime container
 WORKDIR /app
-
-# Copy the built JAR from the previous image
 COPY --from=build /app/target/be-0.0.1-SNAPSHOT.jar be.jar
 
-# Expose the port Spring Boot runs on
 EXPOSE 8080
-
-# Run the Spring Boot app
 ENTRYPOINT ["java", "-jar", "be.jar"]
