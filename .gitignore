@@ -5,12 +5,12 @@ server/node_modules/
 # Ignore environment files
 frontend/.env
 server/.env
-# server/src/main/resources/application.properties
-# *application.properties
+server/src/main/resources/application.properties
+*application.properties
 
-# echo "application.properties" >> .gitignore
-# echo "application-*.properties" >> .gitignore
-# echo "*.env" >> .gitignore
+echo "application.properties" >> .gitignore
+echo "application-*.properties" >> .gitignore
+echo "*.env" >> .gitignore
 
 # Ignore build output
 frontend/dist/
