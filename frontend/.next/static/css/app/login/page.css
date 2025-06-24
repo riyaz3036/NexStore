@@ -1,0 +1,42 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./components/common/Loader/loader-overlay.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+.pendulum_box{
+  display: flex;
+  position: absolute;
+  flex: 1;
+}
+.ball{
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #6689ff;
+  position: relative;
+  transform-origin: 50% -300%;
+}
+
+.ball.first{
+  animation: firstball .9s alternate ease-in infinite;
+}
+
+@keyframes firstball{
+  0%{
+    transform: rotate(35deg);
+  }
+  50%{
+    transform: rotate(0deg);
+  }
+}
+
+.ball.last{
+  animation: lastball .9s alternate ease-out infinite;
+}
+
+@keyframes lastball{
+  50%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-35deg);
+  }
+}
