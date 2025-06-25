@@ -43,6 +43,10 @@ const AddToCart: React.FC<AddToCartProps> = ({variantId}) => {
 
 
     const handleAddToCart = () => {
+        if(user === null){
+            message.open({ text: "please login to perform action", type: MsgEnum.INFO });
+            return;
+        }
         setLoading(true);
         console.log(toAdd);
         CartService.createMultipleCarts([toAdd])
