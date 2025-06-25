@@ -169,6 +169,7 @@ public class VariantService {
             return variantRepository.findByProductIdIn(productIds, pageable);
         }
         else{
+            logger.info("RRR2");
             return variantRepository.findAll(pageable);
         }
     }

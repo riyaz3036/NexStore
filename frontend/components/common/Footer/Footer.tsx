@@ -47,8 +47,7 @@ const Footer = () => {
             {/* Logout overlay */}
             {
                 logout?
-                <Logout setLogout={setLogout}/>:
-                <></>
+                (<Logout showLogout={logout} setShowLogout={setLogout}/>) : (<></>)
             }
         </footer>
     )

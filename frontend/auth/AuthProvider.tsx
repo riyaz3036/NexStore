@@ -4,10 +4,10 @@ import {
     getAccessTokenFromCookie,
 } from '../utils/cookie.utils';
 
-import { authStore } from '../store/auth.store';
 import { observer } from 'mobx-react-lite';
 import { isTokenExpired } from '../utils/jwt.utils';
 import { User } from '../types/user.types';
+import { authStore } from './auth.store';
 
 interface AuthContextType {
     logout: () => void;

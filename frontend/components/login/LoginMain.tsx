@@ -3,7 +3,6 @@ import { useAuth } from "@/auth/AuthProvider";
 import RouteConstants from "@/constants/RouteConstants";
 import { MsgEnum } from "@/enums/message-enum";
 import AuthService from "@/services/auth.service";
-import { authStore } from "@/store/auth.store";
 import { LoginRequest } from "@/types/auth.types";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -13,6 +12,7 @@ import { setAccessTokenInCookie } from "@/utils/cookie.utils";
 import { message } from "../common/message/message";
 import { MailOutlined, LockOutlined } from '@ant-design/icons'
 import Link from "next/link";
+import { authStore } from "@/auth/auth.store";
 
 const LoginMain = () => {
     const router = useRouter();
