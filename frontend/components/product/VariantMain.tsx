@@ -1,3 +1,4 @@
+"use client"
 import ColorConstants from '@/constants/ColorConstants';
 import { ExpandedProduct } from '@/types/product.types';
 import { Variant } from '@/types/variant.types';

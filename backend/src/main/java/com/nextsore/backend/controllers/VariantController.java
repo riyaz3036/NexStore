@@ -134,11 +134,13 @@ public class VariantController {
             variantPage = variantService.getAllVariants(pageable, filterDTO);
         }
 
+        logger.info("TEHH: {}", variantPage.getContent());
         List<VariantResponseDTO> variantDTOs = variantPage.getContent().stream().map(variant -> {
             ProductResponseDTO productDto = productService.getProductById(variant.getProductId());
             return variantMapper.variantToVariantDto(variant, productDto);
         }).collect(Collectors.toList());
 
+        logger.info("TEHH2: {}", variantDTOs);
         VariantPaginationResponseDTO responseDto = VariantPaginationResponseDTO.builder()
                 .data(variantDTOs)
                 .totalElements(variantPage.getTotalElements())

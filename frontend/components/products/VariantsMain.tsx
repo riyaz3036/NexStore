@@ -20,6 +20,8 @@ const sortOptions = [
     { label: 'PRICE: HIGH to LOW', value: 'HIGH_LOW' },
 ];
 
+// export const dynamic = 'force-dynamic';
+
 const VariantsMain = () => {
     const router = useRouter();
     const searchParams = useSearchParams();

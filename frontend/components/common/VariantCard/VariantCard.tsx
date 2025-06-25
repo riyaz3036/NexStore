@@ -26,7 +26,7 @@ const VariantCard: React.FC<VariantProps> = ({variant, favId, unFavoraite}) => {
              <Link href={generateRoute.product(variant.id)} className="relative flex flex-col items-center w-[300px] p-[10px]" style={{backgroundColor: ColorConstants.grey2}}>
                 <div className="relative w-full h-[250px] py-[5px] bg-white">
                     {variant && variant.images && variant.images.length > 0 ? (
-                        <Image src={`${process.env.NEXT_PUBLIC_LOCAL_BE_URL}/${variant?.images[0]?.replace(/\\/g, '/')}`} alt="Home Offers" width={260} height={250} className="w-full h-full object-cover"/>
+                        <Image src={`${process.env.NEXT_PUBLIC_BE_URL}/${variant?.images[0]?.replace(/\\/g, '/')}`} alt="Home Offers" width={260} height={250} className="w-full h-full object-cover"/>
                     ): (
                         <Image src={NoImg} alt="Home Offers" width={260} height={250} className="w-full h-full object-cover"/>
                     )}

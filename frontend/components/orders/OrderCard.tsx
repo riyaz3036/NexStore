@@ -30,7 +30,7 @@ const OrderCard: React.FC<OrderCardProps> = ({order, onCancel}) => {
                             <div className="flex full py-[15px] h-full w-[94%]">
                                 <div className="w-[150px] h-full flex-shrink-0">
                                     {orderVariant.variant && orderVariant.variant.images &&  orderVariant.variant.images.length > 0 ? (
-                                        <Image src={`${process.env.NEXT_PUBLIC_LOCAL_BE_URL}/${orderVariant.variant?.images[0]?.replace(/\\/g, '/')}`}  width={150} height={150} alt="" className="w-full h-full object-cover" />
+                                        <Image src={`${process.env.NEXT_PUBLIC_BE_URL}/${orderVariant.variant?.images[0]?.replace(/\\/g, '/')}`}  width={150} height={150} alt="" className="w-full h-full object-cover" />
                                     ) : (
                                         <Image src={NoImg}  width={150} height={150} alt="" className="w-full h-full object-cover" />
                                     )}
