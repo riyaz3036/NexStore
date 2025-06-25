@@ -12,8 +12,13 @@ RUN mvn clean package -DskipTests
 # Step 2: Runtime image
 FROM eclipse-temurin:21-jdk-jammy
 
+WORKDIR /app
+
 # Copy the built JAR from the build stage
 COPY --from=build /app/target/backend-0.0.1-SNAPSHOT.jar backend.jar
+
+# ✅ Copy the uploads directory from the build context
+COPY uploads/ /app/uploads/
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "backend.jar"]
