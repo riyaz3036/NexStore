@@ -13,7 +13,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jdk-jammy
 
 # Copy the built JAR from the build stage
-COPY --from=build /app/target/be-0.0.1-SNAPSHOT.jar be.jar
+COPY --from=build /app/target/backend-0.0.1-SNAPSHOT.jar backend.jar
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "be.jar"]
