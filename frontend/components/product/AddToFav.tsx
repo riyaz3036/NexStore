@@ -23,7 +23,7 @@ const AddToFav: React.FC<AddToFavProps> = ({variantId}) => {
 
     const toggleFavorite = () => {
         if(user === null){
-            message.open({ text: "please login to perforn action", type: MsgEnum.INFO });
+            message.open({ text: "please login to perform action", type: MsgEnum.INFO });
             return;
         }
         setLoading(true);

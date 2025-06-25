@@ -176,24 +176,6 @@ const VariantsMain = () => {
         />
     );
 
-    const sortMenu = (
-        <Menu 
-            onClick={handleSortChange} 
-            selectedKeys={[sort]}
-            items={[
-                {
-                    key: 'sort-header',
-                    label: 'SORT BY',
-                    disabled: true,
-                    style: { background: '#f5f5f5', fontWeight: 600 }
-                },
-                ...sortOptions.map(option => ({
-                    key: option.value,
-                    label: option.label
-                }))
-            ]}
-        />
-    );
 
     return(
         <div className="p-5 sm:p-10 flex flex-col gap-5">
@@ -207,7 +189,26 @@ const VariantsMain = () => {
                 </Dropdown>
 
                 {/* Sort Filter */}
-                <Dropdown menu={{ items: sortMenu.props.items }} trigger={['click']} placement="bottomLeft">
+                <Dropdown 
+                    menu={{
+                        items: [
+                          {
+                            key: 'sort-header',
+                            label: 'SORT BY',
+                            disabled: true,
+                            style: { background: '#f5f5f5', fontWeight: 600 }
+                          },
+                          ...sortOptions.map(option => ({
+                            key: option.value,
+                            label: option.label
+                          }))
+                        ],
+                        onClick: handleSortChange,
+                        selectedKeys: [sort]
+                    }}
+                    trigger={['click']} 
+                    placement="bottomLeft"
+                >
                     <Button className="w-[180px] flex justify-between items-center bg-white border border-[#2d394b] text-[#2d394b]">
                         <SlidersOutlined /> {sortOptions.find(opt => opt.value === sort)?.label || 'SORT BY'} 
                     </Button>
