@@ -1,11 +1,11 @@
 # Ignore node modules
 frontend/node_modules/
-server/node_modules/
+backend/node_modules/
 
 # Ignore environment files
 frontend/.env
-server/.env
-server/src/main/resources/application.properties
+backend/.env
+backen/src/main/resources/application.properties
 *application.properties
 
 echo "application.properties" >> .gitignore
@@ -14,9 +14,9 @@ echo "*.env" >> .gitignore
 
 # Ignore build output
 frontend/dist/
-server/dist/
+backend/dist/
 frontend/build/
-server/build/
+backend/build/
 
 # Ignore log files
 *.log

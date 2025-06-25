@@ -3,11 +3,8 @@ FROM maven:3.9.6-eclipse-temurin-21 AS build
 
 WORKDIR /app
 
-# Copy pom.xml first for better layer caching
-COPY server/pom.xml ./pom.xml
-
 # Copy source code
-COPY server/src ./src
+COPY . .
 
 # Build the project
 RUN mvn clean package -DskipTests
