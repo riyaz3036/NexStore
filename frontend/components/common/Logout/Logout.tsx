@@ -1,7 +1,6 @@
 "use client"
 import Confirmation from '@/components/comfirmation/Confirmation';
 import RouteConstants from '@/constants/RouteConstants';
-import { authStore } from '@/store/auth.store';
 import { clearAccessTokenInCookie } from '@/utils/cookie.utils';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
@@ -9,6 +8,7 @@ import './logout.css';
 import LoaderOverlay from '../Loader/LoaderOverlay';
 import { MsgEnum } from '@/enums/message-enum';
 import { message } from '../message/message';
+import { authStore } from '@/auth/auth.store';
 
 interface LogoutProps {
   showLogout: boolean;
@@ -40,7 +40,6 @@ const Logout: React.FC<LogoutProps> = ({showLogout, setShowLogout}) => {
             <Confirmation open={showLogout} setOpen={setShowLogout} text="Are you sure you want to logout?" buttonA="yex" buttonExec={handleLogout}/>
             {isLoading && (<LoaderOverlay />)}
         </div>
-        
     );
 }
 

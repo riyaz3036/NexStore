@@ -115,7 +115,7 @@ class AuthStore {
 
     // Enhanced logout method
     logout = (setIsLoading?: (loading: boolean) => void): void => {
-        console.log('Logging out...');
+        console.log('Logging out3...');
         if(setIsLoading) setIsLoading(false);
         setTimeout(() => {
             this.setIsAuthenticated(false);

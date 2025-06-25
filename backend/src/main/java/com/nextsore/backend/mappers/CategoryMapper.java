@@ -7,9 +7,9 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "description", target = "description")
-    @Mapping(source = "image", target = "image")
+    @Mapping(source = "category.id", target = "id")
+    @Mapping(source = "category.description", target = "description")
+    @Mapping(source = "category.image", target = "image")
     CategoryResponseDTO categoryToCategoryDto(Category category);
 
     @Mapping(source = "id", target = "id")

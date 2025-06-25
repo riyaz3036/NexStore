@@ -19,7 +19,7 @@ const DisplayVariantImg: React.FC<DisplayVariantImgProps> = ({displayImages, var
         <div className="flex flex-col gap-3 p-3">
             <div className="relative w-[280px] h-[280px] sm:w-[500px] sm:h-[500px]">
                 {displayImg.length > 0 ? (
-                    <Image src={`${process.env.NEXT_PUBLIC_LOCAL_BE_URL}/${displayImg.replace(/\\/g, '/')}`} alt="Product Image" width={500} height={500} className="w-full h-full object-cover" />
+                    <Image src={`${process.env.NEXT_PUBLIC_BE_URL}/${displayImg.replace(/\\/g, '/')}`} alt="Product Image" width={500} height={500} className="w-full h-full object-cover" />
                 ) : (
                     <Image src={NoImg} alt="Product Image" width={500} height={500} className="w-full h-full object-cover" />
                 )}
@@ -34,7 +34,7 @@ const DisplayVariantImg: React.FC<DisplayVariantImgProps> = ({displayImages, var
                 {displayImages?.map((img, index) => (
                     <div key={index} className="relative w-[60px] h-[60px] sm:w-[110px] sm:h-[100px] cursor-pointer">
                         <div className={`bg-[#6689ff] w-full h-[4px] absolute bottom-0 left-0 z-10 ${img === displayImg ? '' : 'hidden'}`}></div>
-                        <Image src={`${process.env.NEXT_PUBLIC_LOCAL_BE_URL}/${img.replace(/\\/g, '/')}`} alt={`Product Image ${index + 1}`} width={110} height={110} className="w-full h-full object-cover" onClick={() => setDisplayImg(img)} />
+                        <Image src={`${process.env.NEXT_PUBLIC_BE_URL}/${img.replace(/\\/g, '/')}`} alt={`Product Image ${index + 1}`} width={110} height={110} className="w-full h-full object-cover" onClick={() => setDisplayImg(img)} />
                     </div>
                 ))}
             </div>

@@ -31,7 +31,7 @@ const CategoryPreview: React.FC<CategoryPreviewProps> = ({left, preview}) => {
             
             {/* Cover Image */}
             <div className="relative h-[400px] w-full xl:w-[600px]">
-                <Image src={`${process.env.NEXT_PUBLIC_LOCAL_BE_URL}/${preview.category.image.replace(/\\/g, '/')}`} alt="Home Offers" height={400} width={600} className="w-full h-full object-cover"/>
+                <Image src={`${process.env.NEXT_PUBLIC_BE_URL}/${preview.category.image.replace(/\\/g, '/')}`} alt="Home Offers" height={400} width={600} className="w-full h-full object-cover"/>
             </div>
             
             {/* right component */}
