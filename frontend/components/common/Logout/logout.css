@@ -1,0 +1,68 @@
+.delete_event_main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.delete_event_box{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.delete_event_ques{
+    font-size: 18px;
+    margin: 30px 0px;
+}
+
+.delete_event_bttns{
+    padding: 5px 0px;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.delete_event_yes{
+    background-color: #F93C65;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+}
+
+.delete_event_no{
+    background-color: #000000;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+}
+
+
+/* Success messsage */
+.uni_events_add_success_tick{
+    background-color: #59d603;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.uni_events_error{
+    font-size: 18px;
+    font-weight: 500;
+    color: #606060;
+}
