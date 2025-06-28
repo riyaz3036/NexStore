@@ -70,7 +70,7 @@ const VariantMain: React.FC<VariantMainProps> = ({id}) => {
                             <div className="flex flex-wrap gap-3 mt-[8px]">
                                 {product?.variants?.map((variant, index) => (
                                     <Link key={index} href={generateRoute.product(variant.id)}>
-                                        <button className={`p-2 hover:text-white hover:bg-[#2d394b] transition duration-500 ease-in-out ${variant.id === id ? 'bg-[#2d394b] text-white' : ''}`} style={{ border: '1px solid #2d394b' }}>
+                                        <button className={`p-2 text-[#2d394b] hover:text-white hover:bg-[#2d394b] transition duration-500 ease-in-out ${variant.id === id ? 'bg-[#2d394b] text-white' : ''}`} style={{ border: '1px solid #2d394b' }}>
                                             <p>{variant.name}</p>
                                         </button>
                                     </Link>
