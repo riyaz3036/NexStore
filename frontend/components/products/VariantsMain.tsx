@@ -36,7 +36,7 @@ const VariantsMain = () => {
     const [isBestSeller, setIsBestSeller] = useState<boolean>(() => searchParams.get('bestSeller') === 'true');
     const [page, setPage] = useState<number>(0);
     const [variants, setVariants] = useState<Variant[]>([]);
-    const [variantsLoading, setVariantsLoading] = useState<boolean>(true);
+    const [variantsLoading, setVariantsLoading] = useState<boolean>(false);
     const [totalElements, setTotalElements] = useState<number>();
 
     // Update URL query parameters

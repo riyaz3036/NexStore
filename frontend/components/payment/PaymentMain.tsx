@@ -8,7 +8,7 @@ import LoaderOverlay from "../common/Loader/LoaderOverlay";
 import { message } from "../common/message/message";
 import OrderForm from "./OrderForm";
 import OrderSummary from "./OrderSummary";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import RouteConstants from "@/constants/RouteConstants";
 
 

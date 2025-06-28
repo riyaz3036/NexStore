@@ -1,16 +1,15 @@
 "use client"
-import AuthProvider, { useAuth } from "@/auth/AuthProvider";
+import { useAuth } from "@/auth/AuthProvider";
 import ColorConstants from "@/constants/ColorConstants";
 import { MsgEnum } from "@/enums/message-enum";
 import OrderService from "@/services/order.service";
 import { Order } from "@/types/order.types";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import LoaderOverlay from "../common/Loader/LoaderOverlay";
 import { message } from "../common/message/message";
 import Pagination from "../common/Pagination/Pagination";
 import OrderCard from "./OrderCard";
-import { useRouter } from "next/router";
-import RouteConstants from "@/constants/RouteConstants";
 
 
 const OrderMain = () => {
